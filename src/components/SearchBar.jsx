@@ -3,7 +3,7 @@
 const SearchBar = () => {
     return(
         <div>
-            Search bar
+            I am a Search bar
         </div>
     )
 }
