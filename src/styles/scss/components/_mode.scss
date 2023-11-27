@@ -1,0 +1,24 @@
+.mode {
+    column-gap: 16px;
+    cursor: pointer;
+
+    &__title {
+        font-size: 13px;
+        font-weight: 700;
+        line-height: normal;
+        letter-spacing: 2.5px;
+        text-transform: uppercase;
+
+        &--dark {
+            color: $light-tertiary;
+        }
+        &--light {
+            color: $white;
+        }
+    }
+
+    &__icon {
+        width: 20px;
+        height: 20px;
+    }
+}
