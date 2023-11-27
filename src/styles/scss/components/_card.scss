@@ -1,6 +1,8 @@
 .card {
     border-radius: 15px;
     padding: 32px 24px 49px;
+    @include flex(flex, center, space-between);
+    column-gap: 37px;
 
     &--light {
         background: #FEFEFE;
@@ -10,11 +12,34 @@
     &--dark {
         background-color: $dark-primary;
     }
+
+    &__avatar {
+        border-radius: 50%;
+        width: 70px;
+        height: 70px;
+    }
+
+    &__header {
+
+    }
+
+    &__body {
+
+    }
+
+    &__footer {
+        
+    }
 }
 
 @media screen and (min-width: 768px) {
     .card {
         padding: 40px;
+
+        &__avatar {
+            width: 117px;
+            height:  117px;    
+        }
     }
 }
 
