@@ -1,4 +1,5 @@
 .mode {
+    @include flex(flex, center, space-between);
     column-gap: 16px;
     cursor: pointer;
 

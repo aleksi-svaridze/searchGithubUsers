@@ -1,8 +1,8 @@
 
 
-const UserCard = () => {
+const UserCard = ({isDark}) => {
     return(
-        <div>
+        <div className={`card ${isDark ? 'card--light' : 'card--dark'}`}>
             user card here
         </div>
     )

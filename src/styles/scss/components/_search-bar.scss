@@ -66,7 +66,7 @@
     }
 
     &__btn {
-        @include flex-center;
+        @include flex(flex, center, center);
         height: 46px;
         width: 84px;
         font-size: 14px;
@@ -113,7 +113,7 @@
         }
 
         &__no-result {
-            @include flex-center;
+            @include flex(flex, center, center);
             height: 46px;
             width: 84px;
             font-size: 15px;

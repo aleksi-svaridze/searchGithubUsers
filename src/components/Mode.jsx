@@ -3,7 +3,7 @@ import {ReactComponent as SunIcon} from '../images/sun.svg'
 
 const Mode = ({isDark, setIsDark}) => {
     return(
-        <div className='flex-center-between mode' onClick={() => setIsDark(!isDark)}>
+        <div className='mode' onClick={() => setIsDark(!isDark)}>
             {isDark ? <p className='mode__title mode__title--dark'>dark</p> : <p className='mode__title mode__title--light'>light</p>}
             
             {isDark ? 

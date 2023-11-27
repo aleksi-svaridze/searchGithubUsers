@@ -12,7 +12,7 @@ function App() {
       <div className="container">
       <Header isDark={isDark} setIsDark={setIsDark} />
       <SearchBar isDark={isDark} />
-      <UserCard />
+      <UserCard isDark={isDark} />
       </div>
     </div>
   );
