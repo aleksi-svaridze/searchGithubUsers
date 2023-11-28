@@ -1,0 +1,59 @@
+.statistics {
+    padding: 18px 15px;
+    @include flex(flex, center, space-evenly);
+    border-radius: 10px;
+
+    &--light {
+        background-color: $lightBlue;
+    }
+    &--dark {
+        background-color: $dark-secondary;
+    }
+
+    &__item {
+
+        &--title {
+            text-align: center;
+            font-size: 11px;
+
+            &--light {
+                color: $light-primary;
+            }
+            &--dark {
+                color: $white;
+            }
+        }
+
+        &--count {
+            text-align: center;
+            font-size: 16px;
+            font-weight: 700;
+            text-transform: uppercase;
+
+            &--light {
+                color: $light-secondary;
+            }
+            &--dark {
+                color: $white;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px){
+    .statistics {
+        padding: 15px 32px 17px;
+        &__item {
+            &--title {
+                text-align: left;
+                font-size: 13px;
+                text-align: left;
+            }
+    
+            &--count {
+                text-align: left;
+                font-size: 22px;
+            }
+        }
+    }
+}

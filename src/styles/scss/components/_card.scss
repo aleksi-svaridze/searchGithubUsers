@@ -1,8 +1,6 @@
 .card {
     border-radius: 15px;
     padding: 32px 24px 49px;
-    @include flex(flex, center, space-between);
-    column-gap: 37px;
 
     &--light {
         background: #FEFEFE;
@@ -53,6 +51,7 @@
     &__bio {
         font-size: 13px;
         line-height: 25px;
+        margin-bottom: 23px;
 
         &--light {
             color: $light-primary;
@@ -65,24 +64,16 @@
     &__header--container {
         @include flex(flex, center, flex-start);
         column-gap: 20px;
-    }
-    &__header {
-        flex-shrink: 0;
+        margin-bottom: 33px;
     }
     &__body--container {
         @include flex(flex, flex-start, flex-start);
         flex-direction: column;
     }
-
-    &__body {
-
-    }
-
     &__footer {
-
+        margin-top: 24px;
     }
 }
-
 @media screen and (min-width: 768px) {
     .card {
         padding: 40px;
@@ -103,19 +94,41 @@
         }
         &__bio {
             font-size: 15px;
+            margin-bottom: 32px;
         }
         &__body--container {
             column-gap: 41px;
         }
+        &__header--container {
+            @include flex(flex, center, flex-start);
+            column-gap: 20px;
+            margin-bottom: 24px;
+        }
+        &__footer {
+            margin-top: 32px;
+            display: grid;
+            grid-template-columns: auto auto;
+            column-gap: 60px; 
+        }
     }
 }
-
 @media screen and (min-width: 991px) {
     .card {
         padding: 48px;
+        @include flex(flex, flex-start, space-between);
+        column-gap: 37px;
+
+        &__content--container {
+
+        }
 
         &__username {
             margin: 2px 0 20px;
+        }
+        &__header--container {
+            @include flex(initial, initial, initial);
+            column-gap: 20px;
+            margin-bottom: 32px;
         }
         &__body--container {
             @include flex(initial, initial, initial);
