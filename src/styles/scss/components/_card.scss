@@ -20,11 +20,58 @@
     }
 
     &__title {
-        
+        @include flex(flex, center, space-between);
+        font-size: 16px;
+        font-weight: 700;
+
+        &--light {
+            color: $light-secondary;
+        }
+
+        &--dark {
+            color: $white;
+        }
     }
+    &__sub-title {
+        font-size: 13px;
+        font-weight: 400;
 
+        &--light {
+            color: $light-tertiary;
+        }
+
+        &--dark {
+            color: $white;
+        }
+    }
+    &__username {
+        color: $blue;
+        font-size: 13px;
+        font-weight: 400;
+        margin: 0 0 6px;
+    }
+    &__bio {
+        font-size: 13px;
+        line-height: 25px;
+
+        &--light {
+            color: $light-primary;
+        }
+
+        &--dark {
+            color: $white;
+        }
+    }
+    &__header--container {
+        @include flex(flex, center, flex-start);
+        column-gap: 20px;
+    }
     &__header {
-
+        flex-shrink: 0;
+    }
+    &__body--container {
+        @include flex(flex, flex-start, flex-start);
+        flex-direction: column;
     }
 
     &__body {
@@ -44,11 +91,35 @@
             width: 117px;
             height:  117px;    
         }
+        &__title {
+            font-size: 26px;
+        }
+        &__sub-title {
+            font-size: 15px;
+        }
+        &__username {
+            font-size: 16px;
+            margin: 2px 0 4px;
+        }
+        &__bio {
+            font-size: 15px;
+        }
+        &__body--container {
+            column-gap: 41px;
+        }
     }
 }
 
 @media screen and (min-width: 991px) {
     .card {
         padding: 48px;
+
+        &__username {
+            margin: 2px 0 20px;
+        }
+        &__body--container {
+            @include flex(initial, initial, initial);
+            column-gap: initial;
+        }
     }
 }
