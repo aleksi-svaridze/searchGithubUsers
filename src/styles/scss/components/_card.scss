@@ -43,6 +43,7 @@
         }
     }
     &__username {
+        text-transform: lowercase;
         color: $blue;
         font-size: 13px;
         font-weight: 400;
@@ -60,6 +61,9 @@
         &--dark {
             color: $white;
         }
+    }
+    &__content--container {
+        width: 100%;
     }
     &__header--container {
         @include flex(flex, center, flex-start);
