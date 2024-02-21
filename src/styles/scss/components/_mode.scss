@@ -12,14 +12,41 @@
 
         &--dark {
             color: $light-tertiary;
+            transition: all .2s;
         }
         &--light {
             color: $white;
+            transition: all .2s;
         }
     }
 
     &__icon {
         width: 20px;
         height: 20px;
+
+        &--moon path {
+            transition: all .2s;
+        }
+        &--sun path {
+            transition: all .2s;
+        }
+    }
+
+    &:hover &__title {
+        &--dark {
+                color: $light-black;
+        }
+        &--light {
+                color: $dark-tertiary;
+        }
+    }
+
+    &:hover  &__icon {
+        &--moon path {
+            fill: $light-black;
+        }
+        &--sun path {
+            fill: $dark-tertiary;
+        }
     }
 }
