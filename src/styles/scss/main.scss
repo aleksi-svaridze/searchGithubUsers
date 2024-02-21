@@ -11,3 +11,16 @@
 @import './components/statistics';
 @import './components/info';
 @import './components/card';
+
+.app {
+    height: 100%;
+
+    &__bg--light {
+        background-color: #141D2F;
+        transition: background-color .2s;
+    }
+    &__bg--dark {
+        background-color: #F6F8FF;
+        transition: background-color .2s;
+    }
+}

@@ -20,7 +20,7 @@ function App() {
   }
 
   return (
-    <div style={{backgroundColor: isDark ? '#F6F8FF': '#141D2F', height: '100vh'}}>
+    <div className={`${isDark ? 'app__bg--dark' : 'app__bg--light'} app`}>
       <div className="container">
         <Header isDark={isDark} setIsDark={setIsDark} />
 

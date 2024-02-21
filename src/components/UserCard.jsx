@@ -14,8 +14,12 @@ const UserCard = ({isDark, userData}) => {
 
 
     return(
+        <>
+        {userData.message === 'Not Found' ? <div className={`card ${isDark ? 'card--light' : 'card--dark'}`}></div> : 
+  
         <div className={`card ${isDark ? 'card--light' : 'card--dark'}`}>
             {width >= 992 && <img src={userData.avatar_url ? userData.avatar_url : temporeryUserAvatar} className='card__avatar' alt="" />} 
+
             <div className='card__content--container'>
 
                 <div className='card__header--container'>
@@ -48,35 +52,35 @@ const UserCard = ({isDark, userData}) => {
                     <a 
                         href={userData.location ? userData.localion : '#'} 
                         className='info' 
-                        style={{textDecorationColor: isDark ? '#4B6A9B' : 'white'}}
+                        style={{textDecorationColor: userData.location ? (isDark ? '#4B6A9B' : 'white') : 'transparent', cursor: !userData.location && 'auto'}}
                     >
                         <span className='info__icon'>
                             <LocationIcon 
-                                fill={userData.location ? (isDark ? '#4B6A9B' : 'white') : 'red'} 
+                                fill={userData.location ? (isDark ? '#4B6A9B' : 'white') : (isDark ? 'rgba(75, 106, 155, .5)' : 'rgba(255,255,255, .5)')} 
                                 className='info__icon--location'
                             /> 
                         </span>
                         <span 
                             className={`info__name ${isDark ? 'info__name--light' : 'info__name--dark'}`}
-                            style={{color: !userData.location && 'red'}}>{userData.location ? userData.location : 'Not Avaliable'}</span>
+                            style={{color: userData.location ? (isDark ? '#4B6A9B' : 'white') : (isDark ? 'rgba(75, 106, 155, .5)' : 'rgba(255,255,255, .5)'), textTransform: 'capitalize'}}>{userData.location ? userData.location : 'Not Avaliable'}</span>
                     </a>
 
                     <a 
                         href={userData.blog ? userData.blog : '#'} 
                         className='info' 
-                        style={{textDecorationColor: isDark ? '#4B6A9B' : 'white'}}
+                        style={{textDecorationColor: userData.blog ? (isDark ? '#4B6A9B' : 'white') : 'transparent', cursor: !userData.blog && 'auto'}}
                         target='_blank'
                         rel='noreferrer'
                     >
                         <span className='info__icon'>
                             <LinkIcon 
                                 className='info__icon--link'
-                                fill={userData.blog ? (isDark ? '#4B6A9B' : 'white') : 'red'} 
+                                fill={userData.blog ? (isDark ? '#4B6A9B' : 'white') : (isDark ? 'rgba(75, 106, 155, .5)' : 'rgba(255,255,255, .5)')} 
                             /> 
                         </span>
                         <span 
                             className={`info__name ${isDark ? 'info__name--light' : 'info__name--dark'}`}
-                            style={{color: !userData.blog && 'red'}}
+                            style={{color: userData.blog ? (isDark ? '#4B6A9B' : 'white') : (isDark ? 'rgba(75, 106, 155, .5)' : 'rgba(255,255,255, .5)'), textTransform: 'capitalize'}}
                         >{userData.blog ? 'Portfolio' : 'Not Available'}
                         </span>
                     </a>
@@ -84,44 +88,49 @@ const UserCard = ({isDark, userData}) => {
                     <a 
                         href={userData.twitter_username ? userData.twitter_username : ''} 
                         className='info' 
-                        style={{textDecorationColor: isDark ? '#4B6A9B' : 'white'}}
+                        style={{
+                            textDecorationColor: userData.twitter_username ? (isDark ? '#4B6A9B' : 'white') : 'transparent', cursor: !userData.twitter_username && 'auto'}}
                     >
                         <span className='info__icon'>
                             <TwitterIcon 
                                 className='info__icon--twitter'
-                                fill={userData.twitter_username ? (isDark ? '#4B6A9B' : 'white') : 'red'} 
+                                fill={userData.twitter_username ? (isDark ? '#4B6A9B' : 'white') : (isDark ? 'rgba(75, 106, 155, .5)' : 'rgba(255,255,255, .5)')} 
                             /> 
                         </span>
                         <span 
                             className={`info__name ${isDark ? 'info__name--light' : 'info__name--dark'}`}
-                            style={{color: !userData.twitter_username && 'red'}}
+                            style={{color: userData.twitter_username ? (isDark ? '#4B6A9B' : 'white') : (isDark ? 'rgba(75, 106, 155, .5)' : 'rgba(255,255,255, .5)'), textTransform: 'capitalize'}}
                         >
                                 {userData.twitter_username ? userData.twitter_username : 'Not Available'}
                         </span>
                     </a>
 
-                    <a 
-                        href={userData.html_url} 
-                        className='info' 
-                        style={{textDecorationColor: isDark ? '#4B6A9B' : 'white'}}
+                    <a  href={userData.html_url} 
+                        className={'info'} 
+                        style={{textDecorationColor: userData.html_url ? (isDark ? '#4B6A9B' : 'white') : 'transparent', cursor: !userData.html_url && 'auto'}}
                         target='_blank'
-                        rel="noreferrer">
+                        rel="noreferrer"
+                        >
                         <span className='info__icon'>
                             <GithubIcon 
                                 className='info__icon--github'
-                                fill={userData.name ? (isDark ? '#4B6A9B' : 'white') : 'red'} 
+                                fill={userData.html_url ? (isDark ? '#4B6A9B' : 'white') : (isDark ? 'rgba(75, 106, 155, .5)' : 'rgba(255,255,255, .5)')} 
                             /> 
                         </span>
                         <span 
                             className={`info__name ${isDark ? 'info__name--light' : 'info__name--dark'}`}
-                            style={{color: !userData.name && 'red'}}
+                            style={{color: userData.html_url ? (isDark ? '#4B6A9B' : 'white') : (isDark ? 'rgba(75, 106, 155, .5)' : 'rgba(255,255,255, .5)')}}
                         >
-                            @{userData.login}
+                            {userData.html_url ? `@${userData.login}` : 'Not Available'}
                         </span>
                     </a>
+                    
                 </footer>
+            
             </div>
         </div>
+}
+        </>
     )
 }
 
