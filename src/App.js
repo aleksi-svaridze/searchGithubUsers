@@ -2,30 +2,30 @@ import Header from "./components/Header";
 import SearchBar from "./components/SearchBar";
 import UserCard from "./components/UserCard";
 
-import { useState , useEffect} from "react";
+import { useState} from "react";
 
 
 function App() {
   let [ isDark, setIsDark ] = useState(true);
-  let [user, setUser] = useState([]);
+  let [userValue, setUserValue] = useState('');
+  let [userData, setUserData] = useState([]);
 
+  const handleUserData = async e => {
+      e.preventDefault()
+      console.log(userValue)
 
+      const response = await fetch(`https://api.github.com/users/${userValue}`);
+      const data = await response.json()
 
-  useEffect(() => {
-    fetch(`https://api.github.com/users/aleksi-svaridze`)
-      .then(res =>  res.json())
-      .then(fetchedUser => {
-      console.log(fetchedUser)
-          setUser(fetchedUser)
-      })
-  }, [])
+      setUserData(data);
+  }
 
   return (
     <div style={{backgroundColor: isDark ? '#F6F8FF': '#141D2F'}}>
       <div className="container">
         <Header isDark={isDark} setIsDark={setIsDark} />
-        <SearchBar isDark={isDark} />
-        <UserCard isDark={isDark} user={user} />
+        <SearchBar isDark={isDark} setUserValue={setUserValue} handleUserData={handleUserData} />
+        <UserCard isDark={isDark} userData={userData} />
       </div>
     </div>
   );
