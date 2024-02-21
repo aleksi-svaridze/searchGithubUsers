@@ -12,7 +12,6 @@ function App() {
 
   const handleUserData = async e => {
       e.preventDefault()
-      console.log(userValue)
 
       const response = await fetch(`https://api.github.com/users/${userValue}`);
       const data = await response.json()
@@ -24,7 +23,13 @@ function App() {
     <div style={{backgroundColor: isDark ? '#F6F8FF': '#141D2F'}}>
       <div className="container">
         <Header isDark={isDark} setIsDark={setIsDark} />
-        <SearchBar isDark={isDark} setUserValue={setUserValue} handleUserData={handleUserData} />
+
+        <SearchBar 
+          isDark={isDark} 
+          setUserValue={setUserValue} 
+          handleUserData={handleUserData} 
+          userData={userData} />
+
         <UserCard isDark={isDark} userData={userData} />
       </div>
     </div>

@@ -26,7 +26,7 @@ const UserCard = ({isDark, userData}) => {
                             { width >= 992 && <span className={`card__sub-title ${isDark ? 'card__sub-title--light' : 'card__sub-title--dark'}`}>Joined {day} {month} {year}</span>}
                         </h2>
 
-                        <p className='card__username'>@{userData.name}</p>
+                        <p className='card__username'>@{userData.login}</p>
 
                         { width < 992 && <span className={`card__sub-title ${isDark ? 'card__sub-title--light' : 'card__sub-title--dark'}`}>Joined {day} {month} {year}</span>}
                     </header>
@@ -101,7 +101,7 @@ const UserCard = ({isDark, userData}) => {
                     </a>
 
                     <a 
-                        href={`https://github.com/${userData.login}`} 
+                        href={userData.html_url} 
                         className='info' 
                         style={{textDecorationColor: isDark ? '#4B6A9B' : 'white'}}
                         target='_blank'
