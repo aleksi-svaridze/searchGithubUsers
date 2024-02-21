@@ -20,7 +20,7 @@ function App() {
   }
 
   return (
-    <div style={{backgroundColor: isDark ? '#F6F8FF': '#141D2F'}}>
+    <div style={{backgroundColor: isDark ? '#F6F8FF': '#141D2F', height: '100vh'}}>
       <div className="container">
         <Header isDark={isDark} setIsDark={setIsDark} />
 
