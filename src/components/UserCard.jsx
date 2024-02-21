@@ -64,6 +64,8 @@ const UserCard = ({isDark, user}) => {
                         href={user.blog ? user.blog : '#'} 
                         className='info' 
                         style={{textDecorationColor: isDark ? '#4B6A9B' : 'white'}}
+                        target='_blank'
+                        rel='noreferrer'
                     >
                         <span className='info__icon'>
                             <LinkIcon 
@@ -74,12 +76,12 @@ const UserCard = ({isDark, user}) => {
                         <span 
                             className={`info__name ${isDark ? 'info__name--light' : 'info__name--dark'}`}
                             style={{color: !user.blog && 'red'}}
-                        >{user.blog ? user.blog : 'Not Available'}
+                        >{user.blog ? 'Portfolio' : 'Not Available'}
                         </span>
                     </a>
 
                     <a 
-                        href={user.twitter_username ? user.twitter_username : '#'} 
+                        href={user.twitter_username ? user.twitter_username : ''} 
                         className='info' 
                         style={{textDecorationColor: isDark ? '#4B6A9B' : 'white'}}
                     >
@@ -97,7 +99,12 @@ const UserCard = ({isDark, user}) => {
                         </span>
                     </a>
 
-                    <a href={user.name} className='info' style={{textDecorationColor: isDark ? '#4B6A9B' : 'white'}}>
+                    <a 
+                        href={`https://github.com/${user.login}`} 
+                        className='info' 
+                        style={{textDecorationColor: isDark ? '#4B6A9B' : 'white'}}
+                        target='_blank'
+                        rel="noreferrer">
                         <span className='info__icon'>
                             <GithubIcon 
                                 className='info__icon--github'
@@ -108,7 +115,7 @@ const UserCard = ({isDark, user}) => {
                             className={`info__name ${isDark ? 'info__name--light' : 'info__name--dark'}`}
                             style={{color: !user.name && 'red'}}
                         >
-                            @{user.name}
+                            @{user.login}
                         </span>
                     </a>
                 </footer>

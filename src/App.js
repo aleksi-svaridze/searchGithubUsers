@@ -12,7 +12,7 @@ function App() {
 
 
   useEffect(() => {
-    fetch('https://api.github.com/users/1')
+    fetch(`https://api.github.com/users/aleksi-svaridze`)
       .then(res =>  res.json())
       .then(fetchedUser => {
       console.log(fetchedUser)
