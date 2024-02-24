@@ -19,10 +19,24 @@ function App() {
       setUserData(data);
   }
 
+  const setDarkTheme = () => {
+    document.querySelector('body').setAttribute('data-theme', 'dark__theme')
+}
+const setLightTheme = () => {
+    document.querySelector('body').setAttribute('data-theme', 'light__theme')
+}
+
+  const handleThemeChange = () => {
+    setIsDark(!isDark)
+
+    if(isDark) setDarkTheme()
+    else setLightTheme()
+  }
+
   return (
-    <div className={`${isDark ? 'app__bg--dark' : 'app__bg--light'} app`}>
+    <div className={`app`}>
       <div className="container">
-        <Header isDark={isDark} setIsDark={setIsDark} />
+        <Header isDark={isDark} handleThemeChange={handleThemeChange} />
 
         <SearchBar 
           isDark={isDark} 

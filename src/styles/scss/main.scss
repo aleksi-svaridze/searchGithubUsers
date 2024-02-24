@@ -1,8 +1,6 @@
-@import './variables';
 @import './mixins';
 @import './font';
 @import './reset';
-@import './typography';
 @import './container';
 
 @import './components/header';
@@ -12,15 +10,36 @@
 @import './components/info';
 @import './components/card';
 
-.app {
-    height: 100%;
+:root {
+    --body-bg: #F6F8FF;
+    --blue: #0079FF;
+    --red: #F74646;
+    --white: #fff;
 
-    &__bg--light {
-        background-color: #141D2F;
-        transition: background-color .2s;
-    }
-    &__bg--dark {
-        background-color: #F6F8FF;
-        transition: background-color .2s;
-    }
+    --light-primary: #4b6a9b;
+    --light-secondary: #2B3442;
+    --light-tertiary: #697C9A;
+    --light-black: #222731; 
+    --dark-primary: #FEFEFE;
+    --dark-secondary: #F6F8FF;
+    --blue-extra: #60ABFF;
+    --box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.20);
+    
+}
+
+[data-theme="dark__theme"] {
+    --body-bg: #141D2F;
+    --light-primary: #fff;
+    --light-secondary: #fff;
+    --light-tertiary: #fff;
+    --light-black: #90A4D4;
+    --dark-primary: #1E2A47;
+    --dark-secondary: #141D2F;
+    --box-shadow: none;
+}
+
+.app {
+    min-height: 100vh;
+    background-color: var(--body-bg);
+    transition: background-color .2s;
 }

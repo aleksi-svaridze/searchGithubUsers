@@ -33,13 +33,7 @@
     &__name {
         text-transform: lowercase;
         font-size: 13px;
-
-        &--light {
-            color: $light-primary;
-        }
-        &--dark {
-            color: $white;
-        }
+        color: var(--light-primary);
     }
 
     &:hover {

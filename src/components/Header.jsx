@@ -1,11 +1,13 @@
 import Mode from './Mode';
 
-const Header = ({isDark, setIsDark}) => {
+const Header = ({isDark, handleThemeChange}) => {
     return (
         <div className='header'>
-            <h1 className={`heading-primary ${isDark ? 'heading-primary--light' : 'heading-primary--dark'}`}>devfinder</h1>
+            <h1 
+                className={`heading-primary`}
+                style={{color: isDark ? '#222731' : '#ffffff'}}>devfinder</h1>
 
-            <Mode isDark={isDark} setIsDark={setIsDark} />
+            <Mode isDark={isDark} handleThemeChange={handleThemeChange} />
         </div>
     )
 }

@@ -2,11 +2,11 @@ import {ReactComponent as SearchIcon} from '../images/search.svg'
 
 const SearchBar = ({isDark, userValue, setUserValue, handleUserData, userData}) => {
     return(
-        <form className={`search-bar ${isDark ? 'search-bar--light' : 'search-bar--dark'}`} >
+        <form className={`search-bar`} >
             <input 
                 type="text" 
                 placeholder='Search GitHub username…' 
-                className={`search-bar__input ${isDark ? 'search-bar__input--light' : 'search-bar__input--dark'}`} 
+                className={`search-bar__input`} 
                 value={userValue}
                 onChange={(e) => setUserValue(e.target.value)}
                 />

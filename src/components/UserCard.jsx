@@ -14,7 +14,7 @@ const UserCard = ({isDark, userData}) => {
 
 
     return(
-        <div className={`card ${isDark ? 'card--light' : 'card--dark'}`}>
+        <div className={`card`}>
             {width >= 992 && <img src={userData.avatar_url ? userData.avatar_url : temporeryUserAvatar} className='card__avatar' alt="" />} 
 
             <div className='card__content--container'>
@@ -22,19 +22,19 @@ const UserCard = ({isDark, userData}) => {
                 <div className='card__header--container'>
                     {width < 992 && <img src={userData.avatar_url ? userData.avatar_url : temporeryUserAvatar} className='card__avatar' alt="" />}                    
                     <header className='card__header'>
-                        <h2 className={`card__title ${isDark ? 'card__title--light' : 'card__title--dark'}`}>
+                        <h2 className={`card__title`}>
                             {userData.name ? userData.name : 'User Name here..'}
-                            { width >= 992 && <span className={`card__sub-title ${isDark ? 'card__sub-title--light' : 'card__sub-title--dark'}`}>Joined {day ? day : ''} {month ? month : ''} {year ? year : ''}</span>}
+                            { width >= 992 && <span className={`card__sub-title`}>Joined {day ? day : ''} {month ? month : ''} {year ? year : ''}</span>}
                         </h2>
 
                         <p className='card__username'>{userData.login ? userData.login : 'User nickname here..'}</p>
 
-                        { width < 992 && <span className={`card__sub-title ${isDark ? 'card__sub-title--light' : 'card__sub-title--dark'}`}>Joined {day} {month} {year}</span>}
+                        { width < 992 && <span className={`card__sub-title`}>Joined {day} {month} {year}</span>}
                     </header>
                 </div>
 
                 <div className='card__body'>
-                    <p className={`card__bio ${isDark ? 'card__bio--light' : 'card__bio--dark'}`}>
+                    <p className={`card__bio`}>
                         {userData.bio ? 
                             userData.bio
                             :
@@ -58,7 +58,7 @@ const UserCard = ({isDark, userData}) => {
                             /> 
                         </span>
                         <span 
-                            className={`info__name ${isDark ? 'info__name--light' : 'info__name--dark'}`}
+                            className={`info__name`}
                             style={{color: userData.location ? (isDark ? '#4B6A9B' : 'white') : (isDark ? 'rgba(75, 106, 155, .5)' : 'rgba(255,255,255, .5)'), textTransform: 'capitalize'}}>{userData.location ? userData.location : 'Not Avaliable'}</span>
                     </a>
 
@@ -76,7 +76,7 @@ const UserCard = ({isDark, userData}) => {
                             /> 
                         </span>
                         <span 
-                            className={`info__name ${isDark ? 'info__name--light' : 'info__name--dark'}`}
+                            className={`info__name`}
                             style={{color: userData.blog ? (isDark ? '#4B6A9B' : 'white') : (isDark ? 'rgba(75, 106, 155, .5)' : 'rgba(255,255,255, .5)'), textTransform: 'capitalize'}}
                         >{userData.blog ? 'Portfolio' : 'Not Available'}
                         </span>
@@ -95,7 +95,7 @@ const UserCard = ({isDark, userData}) => {
                             /> 
                         </span>
                         <span 
-                            className={`info__name ${isDark ? 'info__name--light' : 'info__name--dark'}`}
+                            className={`info__name`}
                             style={{color: userData.twitter_username ? (isDark ? '#4B6A9B' : 'white') : (isDark ? 'rgba(75, 106, 155, .5)' : 'rgba(255,255,255, .5)'), textTransform: 'capitalize'}}
                         >
                                 {userData.twitter_username ? userData.twitter_username : 'Not Available'}
@@ -115,7 +115,7 @@ const UserCard = ({isDark, userData}) => {
                             /> 
                         </span>
                         <span 
-                            className={`info__name ${isDark ? 'info__name--light' : 'info__name--dark'}`}
+                            className={`info__name`}
                             style={{color: userData.html_url ? (isDark ? '#4B6A9B' : 'white') : (isDark ? 'rgba(75, 106, 155, .5)' : 'rgba(255,255,255, .5)')}}
                         >
                             {userData.html_url ? `@${userData.login}` : 'Not Available'}

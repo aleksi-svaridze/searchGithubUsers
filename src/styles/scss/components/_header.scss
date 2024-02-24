@@ -1,3 +1,12 @@
 .header {
     @include flex (flex, center, space-between);
 }
+
+.heading-primary {
+    font: {
+        size: 26px;
+        weight: bold;
+    };
+    line-height: normal;
+    text-transform: lowercase;
+}

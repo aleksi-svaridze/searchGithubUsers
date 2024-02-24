@@ -3,18 +3,18 @@
 
 const Statistics = ({isDark, userData}) => {
     return(
-        <div className={`statistics ${isDark ? 'statistics--light' : 'statistics--dark'}`}>
+        <div className={`statistics`}>
             <div className="statistics__item">
-                <p className={`statistics__item--title ${isDark ? 'statistics__item--title--light' : 'statistics__item--title--dark'}`}>repos</p>
-                <p className={`statistics__item--count ${isDark ? 'statistics__item--count--light' : 'statistics__item--count--dark'}`}>{userData.public_repos}</p>
+                <p className={`statistics__item--title`}>repos</p>
+                <p className={`statistics__item--count`}>{userData.public_repos}</p>
             </div>
             <div className="statistics__item">
-                <p className={`statistics__item--title ${isDark ? 'statistics__item--title--light' : 'statistics__item--title--dark'}`}>followers</p>
-                <p className={`statistics__item--count ${isDark ? 'statistics__item--count--light' : 'statistics__item--count--dark'}`}>{userData.followers}</p>
+                <p className={`statistics__item--title`}>followers</p>
+                <p className={`statistics__item--count`}>{userData.followers}</p>
             </div>
             <div className="statistics__item">
-                <p className={`statistics__item--title ${isDark ? 'statistics__item--title--light' : 'statistics__item--title--dark'}`}>following</p>
-                <p className={`statistics__item--count ${isDark ? 'statistics__item--count--light' : 'statistics__item--count--dark'}`}>{userData.following}</p>
+                <p className={`statistics__item--title`}>following</p>
+                <p className={`statistics__item--count`}>{userData.following}</p>
             </div>
         </div>
     )

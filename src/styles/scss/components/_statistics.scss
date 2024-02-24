@@ -2,26 +2,14 @@
     padding: 18px 15px;
     @include flex(flex, center, space-evenly);
     border-radius: 10px;
-
-    &--light {
-        background-color: $lightBlue;
-    }
-    &--dark {
-        background-color: $dark-secondary;
-    }
+    background-color: var(--dark-secondary);
 
     &__item {
 
         &--title {
             text-align: center;
             font-size: 11px;
-
-            &--light {
-                color: $light-primary;
-            }
-            &--dark {
-                color: $white;
-            }
+            color: var(--light-primary);
         }
 
         &--count {
@@ -29,13 +17,7 @@
             font-size: 16px;
             font-weight: 700;
             text-transform: uppercase;
-
-            &--light {
-                color: $light-secondary;
-            }
-            &--dark {
-                color: $white;
-            }
+            color: var(--light-secondary);
         }
     }
 }

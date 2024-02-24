@@ -9,44 +9,21 @@
         line-height: normal;
         letter-spacing: 2.5px;
         text-transform: uppercase;
-
-        &--dark {
-            color: $light-tertiary;
-            transition: all .2s;
-        }
-        &--light {
-            color: $white;
-            transition: all .2s;
-        }
+        color: var(--light-tertiary);
+        transition: all .2s;
     }
 
     &__icon {
         width: 20px;
         height: 20px;
-
-        &--moon path {
-            transition: all .2s;
-        }
-        &--sun path {
-            transition: all .2s;
-        }
+        transition: all .2s;
     }
 
     &:hover &__title {
-        &--dark {
-                color: $light-black;
-        }
-        &--light {
-                color: $dark-tertiary;
-        }
+        color: var(--light-black);
     }
 
-    &:hover  &__icon {
-        &--moon path {
-            fill: $light-black;
-        }
-        &--sun path {
-            fill: $dark-tertiary;
-        }
+    &:hover  &__icon path {
+        fill: var(--light-black);
     }
 }

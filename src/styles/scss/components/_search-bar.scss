@@ -6,14 +6,7 @@
     margin: 36px 0 16px;
     overflow: hidden;
     position: relative;
-
-    &--light {
-        box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.20);
-    }
-
-    &--dark {
-        box-shadow: none;
-    }
+    box-shadow: var(--box-shadow);
 
     &__input {
         font-family: 'Space Mono', monospace;
@@ -26,22 +19,11 @@
         font-size: 13px;
         font-weight: 400;
         line-height: 25px;
+        color: var(--light-primary);
+        background-color: var(--dark-primary);
 
-        &--light {
-            &::placeholder {
-                color: $light-primary;
-            }
-
-            background-color: $white-extra;
-            color: $light-primary;
-        }
-        &--dark {
-            &::placeholder {
-                color: $white;
-            }
-
-            background-color: $dark-primary;
-            color: $white;
+        &::placeholder {
+            color: var(--light-primary);
         }
 
         &:focus {
@@ -71,7 +53,7 @@
         width: 84px;
         font-size: 14px;
         font-weight: 700;
-        color: $white;
+        color: var(--white);
         line-height: normal;
         text-transform: capitalize;
 
@@ -80,13 +62,13 @@
         top: 50%;
         transform: translateY(-50%);
         border: none;
-        background-color: $blue;
+        background-color: var(--blue);
         border-radius: 10px;
         cursor: pointer;
         transition: background-color .2s;
 
         &:hover {
-            background-color: $blue-extra;
+            background-color: var(--blue-extra);
         }
     }
 }
@@ -124,7 +106,7 @@
             width: 84px;
             font-size: 15px;
             font-weight: 700;
-            color: $red;
+            color: var(--red);
     
             position: absolute;
             right: 140px;
