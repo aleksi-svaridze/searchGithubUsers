@@ -23,13 +23,13 @@ const UserCard = ({isDark, userData}) => {
                     {width < 992 && <img src={userData.avatar_url ? userData.avatar_url : temporeryUserAvatar} className='card__avatar' alt="" />}                    
                     <header className='card__header'>
                         <h2 className={`card__title`}>
-                            {userData.name ? userData.name : 'User Name here..'}
-                            { width >= 992 && <span className={`card__sub-title`}>Joined {day ? day : ''} {month ? month : ''} {year ? year : ''}</span>}
+                            {userData.name ? userData.name : 'Octocat'}
+                            { width >= 992 && <span className={`card__sub-title`}>Joined {day ? day : '12'} {month ? month : 'Jan'} {year ? year : '2011'}</span>}
                         </h2>
 
-                        <p className='card__username'>{userData.login ? userData.login : 'User nickname here..'}</p>
+                        <p className='card__username'>@{userData.login ? userData.login : 'octocat'}</p>
 
-                        { width < 992 && <span className={`card__sub-title`}>Joined {day} {month} {year}</span>}
+                        { width < 992 && <span className={`card__sub-title`}>Joined {day ? day : '12'} {month ? month : 'Jan'} {year ? year : '2011'}</span>}
                     </header>
                 </div>
 
